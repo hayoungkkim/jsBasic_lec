@@ -1,0 +1,10 @@
+# Mac OS X hidden files
+.DS_Store
+
+# Visual Studio Code Project files
+.vscode/
+
+# Exclude any PSD/AI source
+psd/
+*.psd
+*.ai

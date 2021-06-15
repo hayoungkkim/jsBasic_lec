@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node</title>
+</head>
+<body>
+
+    <h1>Node Example</h1>
+    <h2>subHeading</h2>
+    <!--#content>p.para*4>{$. }>lorem8-->
+    <div id="content" style="background-color:gold">
+        <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p class="para">Recusandae, ad, minus? Officia facilis minus adipisci, aspernatur.</p>
+        <p class="para">Mollitia eveniet, cupiditate dicta, numquam voluptas recusandae pariatur.</p>
+        <p class="para">Facilis ipsa iste repudiandae quo corrupti amet esse.</p>
+    </div>
+    <p id="target">Target paragraph</p>
+
+    <script>
+    var elTarget = document.getElementById('target'),
+        elContainer = document.getElementById('content');
+
+    console.log(elContainer.childNodes);
+    // console.log(elContainer.childNodes[0]);
+    // console.log(elContainer.firstChild.nextSibling);
+    // console.log(elContainer.firstElementChild)
+    // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild
+
+    // var returnedNode = elContainer.appendChild(elTarget);
+    // console.log(returnedNode == elTarget);
+    // console.log(elTarget == elContainer.lastChild);
+
+    var returnedNode = elContainer.insertBefore(elTarget, elContainer.firstChild);
+    console.log(elContainer.childNodes);
+    console.log(elTarget == elContainer.firstChild);
+
+    var subHeding = document.getElementsByTagName('h2')[0],
+        tempNode = subHeding.cloneNode(true);
+    document.body.appendChild(tempNode);
+    
+    </script>
+</body>
+</html>
